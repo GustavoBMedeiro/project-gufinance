@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  width: 100vw;
 }
 
 .App-logo {
@@ -14,14 +15,22 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: var(--primary-color);
+  min-height: 48px;
+  max-height: 40vh;
+  padding-top: 5rem;
+  padding-bottom: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  width: 100%;
+}
+
+.App-header h2{
+  font-weight: 100;
 }
 
 .App-link {
@@ -36,3 +45,292 @@
     transform: rotate(360deg);
   }
 }
+
+main{
+  display: block;
+  position:absolute;
+  margin: auto;
+  margin-top: -90px;
+  width: 100%;
+}
+
+
+#balance-container h3{
+  color: #fff;
+}
+
+#transaction-container table{
+  width: 100%;
+  padding: 0 1rem;
+  border-spacing: 0 1rem;
+  text-align: center;
+}
+
+#transaction-container table th{
+  background:var(--primary-color);
+  color: #fff;
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+#transaction-container table td{
+  background: #fff;
+  padding: 0.8rem ;
+  min-width: 100px;
+  text-align: center;
+}
+@media screen and (min-width: 720px){
+  #balance-container div{
+    color: #fff;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  #balance-container div .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  #balance-container div .card h4{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  #balance-container div .card :first-child{
+    margin-bottom: 2rem;
+  }
+
+  #balance-container div .card :last-child{
+    margin-bottom: 2rem;
+    font-size: 3rem;
+  }
+
+  .card-green{
+    border: 2px solid #fff;
+  }
+
+  .btn-transaction{
+    background-color: var(--primary-color);
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 1rem 3rem;
+    margin: 3rem 0;
+    text-transform: capitalize;
+    font-size: 3rem;
+    font-weight: 900;
+  }
+
+  #transaction-container table td{
+    background: #fff;
+    padding: 1rem ;
+    min-width: 50px;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  #transaction-container table th{
+    font-size: 1.5rem;
+  }
+}
+.card-white{
+  margin: 1rem 1rem;
+  padding: 1rem 1rem;
+  background-color: white;
+  border: 1px solid var(--gray-secondary);
+  text-align: left;
+}
+
+.card{
+  border-radius: 0.2rem ;
+}
+.card h4{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-white :first-child{
+  color: rgb(150, 150, 150);
+  font-weight: 300;
+}
+
+.card-white :last-child{
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: rgb(100, 100, 100);
+  line-height: 3rem;
+}
+
+.card-green{
+  margin: 1rem 1rem;
+  padding: 1rem 1rem;
+  background-color: #fff;
+  border: 1px solid var(--gray-secondary);
+  text-align: left;
+}
+
+.card-green :first-child{
+  color: var(--gray-secondary);
+  font-weight: 300;
+}
+
+.card-green :last-child{
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--alternative-color);
+  line-height: 3rem;
+}
+
+.btn-transaction{
+  background-color: var(--primary-color);
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 1rem 3rem;
+  margin: 3rem 0;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+#balance-container{
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  text-align: center;
+}
+#transaction-container{
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.modal-overlay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(100, 100, 100, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-overlay.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  background: #fff;
+  padding: 2rem;
+  margin: 1rem;
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  max-width: 800px;
+}
+
+.modal h2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.modal form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.modal form label{
+  padding: 0.5rem 0;
+  color: var(--gray-secondary);
+  font-weight: 100;
+  font-size: 1rem;
+}
+
+.modal form input::placeholder{
+  color: var(--gray-primary);
+}
+
+.modal form input,select{
+  padding: 0.5rem 0.5rem;
+  border: 1px solid #ccc;
+  color: var(--gray-primary);
+  background-color: var(--gray-alternative);
+}
+
+.modal form div{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modal form div button{
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+}
+
+button{
+  cursor: pointer;
+}
+.modal form div button:first-child{
+  background-color:  var(--primary-color);
+  border: 4px solid var(--primary-color);
+}
+
+.modal form div button:last-child{
+  color: var(--primary-color);
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 4px solid var(--primary-color);
+}
+
+.entrada{
+  color: var(--primary-color);
+}
+
+.saida{
+  color: #D9644A;
+}
+
+

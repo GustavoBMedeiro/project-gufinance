@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "gu-portifolio"
+  },
+  "targets": {
+    "gu-portifolio": {
+      "hosting": {
+        "gufinance1": [
+          "gufinance1"
+        ]
+      }
+    }
+  }
+}
